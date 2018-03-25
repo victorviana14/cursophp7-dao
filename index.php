@@ -28,12 +28,19 @@ echo json_encode($search);
  */
 
 //CARREGA UM USUARIO USANDO UM LOGIN E A SENHA
-
+/* 
 $usuario = new Usuario();
 $usuario->login("jose", "1234567890");
 
 echo $usuario;
+ */
 
+
+ $aluno = new Usuario("asdrubal","P@ssw0rd");
+
+ $aluno->insert();
+
+ echo $aluno;
 
 
 ?>
