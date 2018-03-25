@@ -14,4 +14,5 @@ $root->loadById(5);
 
 echo $root;
 
+echo "teste do git com VS Code";
 ?>
