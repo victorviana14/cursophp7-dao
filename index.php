@@ -41,11 +41,19 @@ echo $usuario;
 
  echo $aluno;
  */
-
+/* 
+ //ATUALIZA O REGISTRO... USUARIO
  $usuario = new Usuario();
  $usuario->loadById(13);
 
  $usuario->update("professor","pr0f3550R");
+echo $usuario;
+ */
+
+$usuario = new Usuario();
+$usuario->loadById(13);
+
+$usuario->delete();
 echo $usuario;
 
 

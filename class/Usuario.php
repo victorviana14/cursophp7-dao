@@ -7,18 +7,18 @@ class Usuario {
     private $dessenha;
     private $dtcadastro;
 
-    public function getIdusuario(){
-
+    public function getIdusuario()
+    {
         return $this->idusuario;
     }
 
-    public function setIdusuario($value){
+    public function setIdusuario($value)
+    {
         $this->idusuario = $value;
     }
 
     public function getDeslogin()
     {
-
         return $this->deslogin;
     }
 
@@ -108,6 +108,8 @@ public function setData($data){
 
 }
 
+//INSERT ===========================================>
+
 public function insert(){
 
     $sql = new Sql();
@@ -122,11 +124,13 @@ public function insert(){
     }
 }
 
+//UPDATE ==================================================>
+
 public function update($login, $password){
 
     $this->setDeslogin($login);
     $this->setDessenha($password);
-    
+
     $sql = new Sql();
 
     $sql->query("UPDATE tb_usuarios SET deslogin = :LOGIN, dessenha = :PASSWORD WHERE idusuario = :ID", array(
@@ -135,8 +139,20 @@ public function update($login, $password){
         ':ID'=>$this->getIdusuario()
     ));
 }
+//DELETE ==================================================>
 
+public function delete(){
 
+    $sql = new Sql();
+    $sql->query("DELETE FROM tb_usuarios WHERE idusuario = :ID", array(
+        ':ID'=>$this->getIdusuario()
+    ));
+
+    $this->setIdusuario(0);
+    $this->setDeslogin("");
+    $this->setDessenha("");
+    $this->setDtcadastro(new DateTime());
+}
 
 
 //CONSTRUTORES ================================================================================>
