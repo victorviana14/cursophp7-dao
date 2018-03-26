@@ -34,13 +34,19 @@ $usuario->login("jose", "1234567890");
 
 echo $usuario;
  */
-
-
+/* 
+//CRIANDO UM NOVO USUARIO
  $aluno = new Usuario("asdrubal","P@ssw0rd");
-
  $aluno->insert();
 
  echo $aluno;
+ */
+
+ $usuario = new Usuario();
+ $usuario->loadById(13);
+
+ $usuario->update("professor","pr0f3550R");
+echo $usuario;
 
 
 ?>
